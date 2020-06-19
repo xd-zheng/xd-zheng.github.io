@@ -4,12 +4,33 @@
   
     
     <entry>
+      <title>示例博客</title>
+      <link href="/2020/06/19/index/"/>
+      <url>/2020/06/19/index/</url>
+      
+        <content type="html"><![CDATA[<center><span class='p large red'>示</span><span class='p large yellow'>例</span><span class='p large green'>博</span><span class='p large blue'>客</span></center><br><p>这些是一部分使用了「Volantis」主题的博客，由博主自助添加。如果你也使用了「Volantis」，希望在这里推广自己的博客，可以按照本页下方提供的格式自行添加。</p><a id="more"></a><p><br><br></p><span class='btn large center'><a href='https://github.com/xaoxuu/volantis-docs/blob/master/source/examples/index.md' target="_blank" rel="noopener" title='编辑此页'><i class='fas fa-edit'></i>编辑此页</a></span><br><ol><li>请点击上方的按钮，在 GitHub 上编辑此页。以友链的格式新增条目。</li><li>打开 <a href="https://www.yasuotu.com/" target="_blank" rel="noopener">压缩图</a> 将图片尺寸调整到 <code>192px</code> 后下载。</li><li>将压缩后的图片上传到 <a href="https://sm.ms/" target="_blank" rel="noopener">sm.ms 图床</a> 并使用此图片链接作为头像。</li></ol><figure class="highlight md"><figcaption><span>举个栗子</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="bullet">- </span>name: xaoxuu</span><br><span class="line">  url: https://xaoxuu.com</span><br><span class="line">  avatar: https://i.loli.net/2020/04/26/lmJ1xrQ2KR9YZiz.jpg</span><br><span class="line">  tags: [主题作者]</span><br></pre></td></tr></table></figure><div class="note success"><p>本站使用了持续集成，在您提交的更改通过审核并合并代码的几分钟后再刷新网页即生效。</p></div>]]></content>
+      
+      
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>article title</title>
       <link href="/2020/06/18/article-title/"/>
       <url>/2020/06/18/article-title/</url>
       
-        <content type="html"><![CDATA[]]></content>
+        <content type="html"><![CDATA[<p>这是摘要</p><a id="more"></a><p>这是正文</p>]]></content>
       
+      
+      <categories>
+          
+          <category> 分类A </category>
+          
+          <category> 分类B </category>
+          
+      </categories>
       
       
     </entry>
