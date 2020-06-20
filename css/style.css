@@ -51,7 +51,7 @@ html >::-webkit-scrollbar-track-piece {
 html >::-webkit-scrollbar-thumb {
   background: #037;
   cursor: pointer;
-  border-radius: 2px;
+  border-radius: 4px;
 }
 html >::-webkit-scrollbar-thumb:hover {
   background: #ff5722;
