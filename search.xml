@@ -21,7 +21,7 @@
       <link href="/2020/06/18/article-title/"/>
       <url>/2020/06/18/article-title/</url>
       
-        <content type="html"><![CDATA[<p>#<center>Hexo + Github 搭建个人博客</center></p><a id="more"></a><p>这是我老婆</p><p><img src="/images/xinmuyouzi.jpg" alt=""></p><p>1.基本教程：<br><a href="https://zhuanlan.zhihu.com/p/111614119" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/111614119</a></p><p>2.网站主题模板美化：<br><a href="https://volantis.js.org/v2/tag-plugins/#Image" target="_blank" rel="noopener">https://volantis.js.org/v2/tag-plugins/#Image</a><br>2.1 .md文件中使用本地图片：<br><del><a href="https://github.com/boboidream/hexo-easy-images" target="_blank" rel="noopener">https://github.com/boboidream/hexo-easy-images</a><br>安装完这个插件后直接在source/_post下面建立一个同.md文件同名的文件夹 将图片放里面 然后在.md里面引用为![](../.md文件名/图片名.jpg)</del><br><a href="https://blog.csdn.net/u012307002/article/details/51298705" target="_blank" rel="noopener">https://blog.csdn.net/u012307002/article/details/51298705</a><br>在source下新建一个文件夹(images) 然后把图片放里面<br>在.md文件中直接就用![](/images/xinmuyouzi.jpg)  从这个文件夹中调用</p>]]></content>
+        <content type="html"><![CDATA[<p>#<center>Hexo + Github 搭建个人博客</center></p><a id="more"></a><p>这是我老婆</p><p><img src="/images/xinmuyouzi.jpg" alt=""></p><p>1.基本教程：<br><a href="https://zhuanlan.zhihu.com/p/111614119" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/111614119</a></p><p>2.网站主题模板美化：<br><a href="https://volantis.js.org/v2/tag-plugins/#Image" target="_blank" rel="noopener">https://volantis.js.org/v2/tag-plugins/#Image</a><br>2.1 .md文件中使用本地图片：<br><del><a href="https://github.com/boboidream/hexo-easy-images" target="_blank" rel="noopener">https://github.com/boboidream/hexo-easy-images</a><br>安装完这个插件后直接在source/_post下面建立一个同.md文件同名的文件夹 将图片放里面 然后在.md里面引用为![](../.md文件名/图片名.jpg)</del><br><a href="https://blog.csdn.net/u012307002/article/details/51298705" target="_blank" rel="noopener">https://blog.csdn.net/u012307002/article/details/51298705</a><br>在source下新建一个文件夹(images) 然后把图片放里面<br>在.md文件中直接就用![](/images/xinmuyouzi.jpg)  从这个文件夹中调用<br>2.2 免费图床<br><a href="https://sm.ms/home/" target="_blank" rel="noopener">https://sm.ms/home/</a></p>]]></content>
       
       
       <categories>
@@ -32,6 +32,12 @@
           
       </categories>
       
+      
+        <tags>
+            
+            <tag> 搭建博客 </tag>
+            
+        </tags>
       
     </entry>
     
