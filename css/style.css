@@ -42,8 +42,8 @@ html {
   font-size: 16px;
 }
 html >::-webkit-scrollbar {
-  height: 12px;
-  width: 12px;
+  height: 8px;
+  width: 8px;
 }
 html >::-webkit-scrollbar-track-piece {
   background: transparent;
