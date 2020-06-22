@@ -69,6 +69,34 @@
   </script>
 
   
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+	setTimeout(function() {
+	  let script = document.createElement('script');
+	  script.src = "https://www.googletagmanager.com/gtag/js?id=Google Analytics Key";
+	  script.defer=true;
+	  document.body.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'Google Analytics Key');
+	}, 5000);
+    </script>
+  
+  
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+	  setTimeout(function() { 
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?百度统计的key";
+		hm.defer=true;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+	  }, 5000);
+    })();
+    </script>
   
 </head>
 
@@ -561,7 +589,7 @@
   
 
   
-    <article id="post" class="post white-box reveal shadow article-type-post" itemscope itemprop="blogPost">
+    <article id="post" class="post white-box reveal shadow blur article-type-post" itemscope itemprop="blogPost">
       
 
 
@@ -634,6 +662,11 @@
     <p>发布于：2020年6月18日</p>
   </a>
 </div>
+
+            
+          
+            
+              
 
             
           
@@ -894,7 +927,7 @@
 
 
 
-  <article class="post white-box reveal comments shadow">
+  <article class="post white-box reveal comments shadow blur">
     <section class="article typo">
       <p ct><i class='fas fa-comments'></i> 评论</p>
       
