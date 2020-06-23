@@ -78,20 +78,20 @@
   </script>
 
   
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script>
-	setTimeout(function() {
-	  let script = document.createElement('script');
-	  script.src = "https://www.googletagmanager.com/gtag/js?id=Google Analytics Key";
-	  script.defer=true;
-	  document.body.appendChild(script);
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'Google Analytics Key');
-	}, 5000);
-    </script>
   
+    <!-- ba -->
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+	  setTimeout(function() { 
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?6afa3a29a6f358a002e7e28800d9e71a";
+		hm.defer=true;
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+	  }, 5000);
+    })();
+    </script>
   
 </head>
 
@@ -715,6 +715,8 @@
           
             
               
+  
+
 
             
           
@@ -814,6 +816,8 @@
           
             
               
+  
+
 
             
           
@@ -983,12 +987,6 @@
             
               
   
-  <div class='new-meta-item category'>
-    <a href='/categories/%E5%88%86%E7%B1%BBA/%E5%88%86%E7%B1%BBB/' rel="nofollow">
-      <i class="fas fa-folder-open fa-fw" aria-hidden="true"></i>
-      <p>分类A/分类B</p>
-    </a>
-  </div>
 
 
             
@@ -1370,7 +1368,23 @@
   </footer>
 
 <script>setLoadingBarProgress(80);</script>
-
+<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+<script>
+    var now = new Date(); 
+    function createtime() { 
+        var grt= new Date("06/20/2020 00:00:00");//在此处修改你的建站时间，格式：月/日/年 时:分:秒
+        now.setTime(now.getTime()+250); 
+        days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
+        hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
+        if(String(hnum).length ==1 ){hnum = "0" + hnum;} minutes = (now - grt ) / 1000 /60 - (24 * 60 * dnum) - (60 * hnum); 
+        mnum = Math.floor(minutes); if(String(mnum).length ==1 ){mnum = "0" + mnum;} 
+        seconds = (now - grt ) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum); 
+        snum = Math.round(seconds); if(String(snum).length ==1 ){snum = "0" + snum;} 
+        document.getElementById("timeDate").innerHTML = "本站已安全运行 "+dnum+" 天 "; 
+        document.getElementById("times").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒"; 
+    } 
+setInterval("createtime()",250);
+</script>
 
       <script>setLoadingBarProgress(60);</script>
     </div>
@@ -1616,5 +1630,5 @@
 
 
   <script>setLoadingBarProgress(100);</script>
-</body>
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"model":{"jsonPath":"/live2dw/assets/tororo.model.json"},"display":{"position":"right","width":150,"height":300},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

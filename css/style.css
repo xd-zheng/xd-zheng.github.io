@@ -63,6 +63,8 @@ body {
   line-height: 1.65;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
+  cursor: url("/assets/cursor/Arrow_s.cur"), auto;
+  background-color: ;
 }
 body.modal-active {
   overflow: hidden;
