@@ -78,6 +78,20 @@
   </script>
 
   
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+	setTimeout(function() {
+	  let script = document.createElement('script');
+	  script.src = "https://www.googletagmanager.com/gtag/js?id=UA-170475602-1";
+	  script.defer=true;
+	  document.body.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-170475602-1');
+	}, 5000);
+    </script>
+  
   
     <!-- ba -->
     <script>
@@ -665,7 +679,7 @@
   <div class="new-meta-item wordcount">
     <a class='notlink'>
       <i class="fas fa-keyboard fa-fw" aria-hidden="true"></i>
-      <p>字数：207字</p>
+      <p>字数：244字</p>
     </a>
   </div>
   <div class="new-meta-item readtime">
@@ -705,6 +719,7 @@
 <p>1.基本教程：<br><a href="https://zhuanlan.zhihu.com/p/111614119" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/111614119</a></p>
 <p>2.网站主题模板美化：<br><a href="https://volantis.js.org/v2/tag-plugins/#Image" target="_blank" rel="noopener">https://volantis.js.org/v2/tag-plugins/#Image</a><br>2.1 .md文件中使用本地图片：<br><del><a href="https://github.com/boboidream/hexo-easy-images" target="_blank" rel="noopener">https://github.com/boboidream/hexo-easy-images</a><br>安装完这个插件后直接在source/_post下面建立一个同.md文件同名的文件夹 将图片放里面 然后在.md里面引用为![](../.md文件名/图片名.jpg)</del><br><a href="https://blog.csdn.net/u012307002/article/details/51298705" target="_blank" rel="noopener">https://blog.csdn.net/u012307002/article/details/51298705</a><br>在source下新建一个文件夹(images) 然后把图片放里面<br>在.md文件中直接就用![](/images/xinmuyouzi.jpg)  从这个文件夹中调用<br>2.2 免费图床<br><a href="https://sm.ms/home/" target="_blank" rel="noopener">https://sm.ms/home/</a><br>body: [article, related_posts, comments]<br>sidebar: [news, related_posts, donate, repos, toc]</p>
 <p>分享到qq 空间 和微博在xd-zhengBlog\themes\volantis\layout_third-party\share.ejs中设置</p>
+<p>网站运营时间：<br><a href="https://juejin.im/post/5dbe8ea951882520cb1a2747#heading-12" target="_blank" rel="noopener">https://juejin.im/post/5dbe8ea951882520cb1a2747#heading-12</a><br>显示部分放在最后else中替换<br>然后theme目录下config文件中footer中把 br 选上</p>
 
           
             <div class='article_footer'>
@@ -1170,16 +1185,19 @@
         </div>
       
     
+      
+        <!-- 显示部分 -->
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      
+    
   </footer>
 
 <script>setLoadingBarProgress(80);</script>
-<!-- 显示部分 -->
-<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 <!-- 脚本部分 -->
 <script>
   var now = new Date(); 
   function createtime() { 
-      var grt= new Date("11/03/2019 14:42:00");//在此处修改你的建站时间
+      var grt= new Date("06/20/2020 00:00:00");//在此处修改你的建站时间
       now.setTime(now.getTime()+250); 
       days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
       hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 

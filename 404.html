@@ -74,6 +74,20 @@
   </script>
 
   
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script>
+	setTimeout(function() {
+	  let script = document.createElement('script');
+	  script.src = "https://www.googletagmanager.com/gtag/js?id=UA-170475602-1";
+	  script.defer=true;
+	  document.body.appendChild(script);
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-170475602-1');
+	}, 5000);
+    </script>
+  
   
     <!-- ba -->
     <script>
@@ -750,16 +764,19 @@
         </div>
       
     
+      
+        <!-- 显示部分 -->
+        <span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
+      
+    
   </footer>
 
 <script>setLoadingBarProgress(80);</script>
-<!-- 显示部分 -->
-<span id="timeDate">载入天数...</span><span id="times">载入时分秒...</span>
 <!-- 脚本部分 -->
 <script>
   var now = new Date(); 
   function createtime() { 
-      var grt= new Date("11/03/2019 14:42:00");//在此处修改你的建站时间
+      var grt= new Date("06/20/2020 00:00:00");//在此处修改你的建站时间
       now.setTime(now.getTime()+250); 
       days = (now - grt ) / 1000 / 60 / 60 / 24; dnum = Math.floor(days); 
       hours = (now - grt ) / 1000 / 60 / 60 - (24 * dnum); hnum = Math.floor(hours); 
