@@ -16,12 +16,12 @@
 
   <!-- 页面元数据 -->
   
-    <title>Fluent批量设置变量值 - 郑晓东的个人博客</title>
+    <title>Fluent批量监控变量值 - 郑晓东的个人博客</title>
   
     <meta name="keywords" content="Fluent，批量监控">
   
   
-    <meta name="description" content="Fluent批量设置变量值">
+    <meta name="description" content="Fluent批量监控变量值">
   
 
   <!-- feed -->
@@ -611,7 +611,7 @@
           
   <h1 class="title">
     <a href="/2020/07/15/Fluent_monitor_journal/">
-      Fluent批量设置变量值
+      Fluent批量监控变量值
     </a>
   </h1>
 
@@ -685,7 +685,7 @@
       <section class="article typo">
         <div class="article-entry" itemprop="articleBody">
           
-          <center>Fluent批量设置变量值</center>
+          <center>Fluent批量监控变量值</center>
 
 <a id="more"></a>
 
@@ -709,7 +709,7 @@
 <h2 id="：-1"><a href="#：-1" class="headerlink" title="："></a><span class='p h2 blue'>2. 代码实现</span>：</h2><p>通过MATLAB或Python都可轻松进行读写文件操作，Python代码时间太久了没存，懒得重搞了，下面给出MATLAB代码及相应文件：</p>
 <figure class="highlight matlab"><figcaption><span>[Fluent_setPointMonitor] [] [url]</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">pointNum = <span class="number">30</span>;<span class="comment">%点数量</span></span><br><span class="line">coordinate = csvread(<span class="string">'coordinate.csv'</span>);<span class="comment">%点坐标文件</span></span><br><span class="line">firstPointLoc = <span class="number">3</span>;<span class="comment">%Fluent中按文本排序对应的Point1编号</span></span><br><span class="line"></span><br><span class="line">firstPointLoc = firstPointLoc<span class="number">-1</span></span><br><span class="line">temp = <span class="number">1</span>:pointNum;</span><br><span class="line">pointArray = cell(pointNum, <span class="number">1</span>);</span><br><span class="line"><span class="keyword">for</span> t = <span class="number">1</span>:pointNum</span><br><span class="line">    pointArray&#123;t&#125; = num2str(temp(t));</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">pointArray = <span class="built_in">sort</span>(pointArray);</span><br><span class="line">pointArray = str2num(char(pointArray));</span><br><span class="line">[pointArray index] = <span class="built_in">sort</span>(pointArray);</span><br><span class="line">index = index + firstPointLoc;</span><br><span class="line"></span><br><span class="line">jou = fopen(<span class="string">'setPoint.jou'</span>,<span class="string">'w'</span>);</span><br><span class="line">fprintf(jou, <span class="string">'(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame2(Domain)*Table1*Table3(Surface)*PushButton1(Create)")\n(cx-gui-do cx-activate-item "MenuBar*PopupMenuCreate*Point...")'</span>);</span><br><span class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:pointNum</span><br><span class="line">    fprintf(jou, <span class="string">'%s%d%s\n'</span>, <span class="string">'(cx-gui-do cx-set-text-entry "Point Surface*Table1*TextEntry1(New Surface Name)" "point-'</span>, ii, <span class="string">'")'</span>);</span><br><span class="line">    fprintf(jou, <span class="string">'%s%s%s\n'</span>, <span class="string">'(cx-gui-do cx-set-real-entry-list "Point Surface*Table1*Frame4(Coordinates)*Table1*RealEntry1(x0)" ''( '</span>, num2str(coordinate(ii, <span class="number">1</span>)), <span class="string">'))'</span>);</span><br><span class="line">    fprintf(jou, <span class="string">'%s%s%s\n'</span>, <span class="string">'(cx-gui-do cx-set-real-entry-list "Point Surface*Table1*Frame4(Coordinates)*Table1*RealEntry1(y0)" ''( '</span>, num2str(coordinate(ii, <span class="number">1</span>)), <span class="string">'))'</span>);</span><br><span class="line">    <span class="comment">%二维时删除下面这一行</span></span><br><span class="line">    fprintf(jou, <span class="string">'%s%s%s\n'</span>, <span class="string">'(cx-gui-do cx-set-real-entry-list "Point Surface*Table1*Frame4(Coordinates)*Table1*RealEntry1(z0)" ''( '</span>, num2str(coordinate(ii, <span class="number">1</span>)), <span class="string">'))'</span>);</span><br><span class="line">    fprintf(jou, <span class="string">'%s\n'</span>, <span class="string">'(cx-gui-do cx-activate-item "Point Surface*PanelButtons*PushButton1(OK)")'</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">for</span> ii = <span class="number">1</span>:pointNum</span><br><span class="line">    fprintf(jou, <span class="string">'%s\n%s\n%s\n%s\n%s\n%s\n%s\n%s\n'</span>, <span class="string">'(cx-gui-do cx-activate-item "Ribbon*Frame1*Frame5(Solution)*Table1*Table3(Reports)*PushButton2(Definitions)")'</span>, <span class="string">'(cx-gui-do cx-activate-item "MenuBar*Surface ReportSubMenu*Vertex Average...")'</span>, <span class="string">'(cx-gui-do cx-set-list-selections "Surface Report Definition*Table1*Table2*DropDownList3(Field Variable)" ''( 2))'</span>, <span class="string">'(cx-gui-do cx-activate-item "Surface Report Definition*Table1*Table2*DropDownList3(Field Variable)")'</span>, <span class="string">'(cx-gui-do cx-set-list-selections "Surface Report Definition*Table1*Table2*DropDownList4" ''( 1))'</span>, <span class="string">'(cx-gui-do cx-activate-item "Surface Report Definition*Table1*Table2*DropDownList4")'</span>, <span class="string">'(cx-gui-do cx-set-toggle-button2 "Surface Report Definition*Table1*Table1*Table6(Create)*CheckButton1(Report File)" #t)'</span>, <span class="string">'(cx-gui-do cx-activate-item "Surface Report Definition*Table1*Table1*Table6(Create)*CheckButton1(Report File)")'</span>);</span><br><span class="line">    fprintf(jou, <span class="string">'%s%s%s\n'</span>, <span class="string">'(cx-gui-do cx-set-list-selections "Surface Report Definition*Table1*Table2*Table6*List1(Surfaces)" ''( '</span>, num2str(index(ii, <span class="number">1</span>)), <span class="string">'))'</span>);</span><br><span class="line">    fprintf(jou, <span class="string">'%s\n%s\n'</span>, <span class="string">'(cx-gui-do cx-activate-item "Surface Report Definition*Table1*Table2*Table6*List1(Surfaces)")'</span>, <span class="string">'(cx-gui-do cx-activate-item "Surface Report Definition*PanelButtons*PushButton1(OK)")'</span>);</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">fclose(jou);</span><br></pre></td></tr></table></figure>
 
-<span class='btn center large'><a href='https://volantis.js.org/v2/getting-started/' target="_blank" rel="noopener" title='示例代码及文件'><i class='fas fa-download'></i>示例代码及文件</a></span>
+<span class='btn center large'><a href='https://github.com/xd-zheng/xd-zhengBlogData/tree/master/2020/07/16' target="_blank" rel="noopener" title='示例代码及文件'><i class='fas fa-download'></i>示例代码及文件</a></span>
           
             <div class='article_footer'>
               
@@ -768,10 +768,10 @@
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-15T23:13:03+08:00">
+          <div class="new-meta-item date" itemprop="dateUpdated" datetime="2020-07-16T09:31:29+08:00">
   <a class='notlink'>
     <i class="fas fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2020年7月15日</p>
+    <p>更新于：2020年7月16日</p>
   </a>
 </div>
 
@@ -798,7 +798,7 @@
       
         <a class="-mob-share-qq" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xd-zheng.github.io/2020/07/15/Fluent_monitor_journal/&title=Fluent批量设置变量值 - 郑晓东的个人博客&summary=Fluent批量设置变量值"
+          href="http://connect.qq.com/widget/shareqq/index.html?url=http://xd-zheng.github.io/2020/07/15/Fluent_monitor_journal/&title=Fluent批量监控变量值 - 郑晓东的个人博客&summary=Fluent批量监控变量值"
           
           >
           
@@ -810,7 +810,7 @@
       
         <a class="-mob-share-qzone" title="" rel="external nofollow noopener noreferrer"
           
-          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xd-zheng.github.io/2020/07/15/Fluent_monitor_journal/&title=Fluent批量设置变量值 - 郑晓东的个人博客&summary=Fluent批量设置变量值"
+          href="https://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?url=http://xd-zheng.github.io/2020/07/15/Fluent_monitor_journal/&title=Fluent批量监控变量值 - 郑晓东的个人博客&summary=Fluent批量监控变量值"
           
           >
           
@@ -822,7 +822,7 @@
       
         <a class="-mob-share-weibo" title="" rel="external nofollow noopener noreferrer"
           
-          href="http://service.weibo.com/share/share.php?url=http://xd-zheng.github.io/2020/07/15/Fluent_monitor_journal/&title=Fluent批量设置变量值 - 郑晓东的个人博客&summary=Fluent批量设置变量值"
+          href="http://service.weibo.com/share/share.php?url=http://xd-zheng.github.io/2020/07/15/Fluent_monitor_journal/&title=Fluent批量监控变量值 - 郑晓东的个人博客&summary=Fluent批量监控变量值"
           
           >
           
@@ -888,7 +888,7 @@
 
   <script>
     window.subData = {
-      title: 'Fluent批量设置变量值',
+      title: 'Fluent批量监控变量值',
       tools: true
     }
   </script>
